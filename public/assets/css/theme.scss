@@ -1,0 +1,42 @@
+@import "scss/functions";
+@import "custom-variables";
+@import "scss/mixins";
+
+$bg-light-yellow: #f4ede7;
+$bg-light-blue: #e9f2f9;
+$theme-colors: (
+  "primary": #5692eb,
+  "secondary": #e4573d,
+);
+
+@for $fs from 10 through 100 {
+  .fs-#{$fs} {
+    font-size: $fs + px;
+  }
+}
+
+@for $mt from 5 through 100 {
+  .mt-#{$mt} {
+    margin-top: $mt + px;
+  }
+}
+
+@for $width from 20 through 300 {
+  .width-#{$width} {
+    width: $width + px;
+  }
+}
+
+@for $pt from 1 through 100 {
+  $pte: ($pt * 2)-1;
+  .pt-#{$pte} {
+    padding-top: $pte + px;
+  }
+}
+
+@import "scss/bootstrap";
+@import "style";
+$fa-font-path: "../webfonts";
+@import "../fontawesome/scss/fontawesome.scss";
+@import "../fontawesome/scss/solid.scss";
+@import "../fontawesome/scss/brands.scss";

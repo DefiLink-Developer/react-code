@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="icon" href="%PUBLIC_URL%/fav.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="./assets/css/all.min.css" media="all" />
+    <link
+      rel="stylesheet"
+      href="./assets/css/owl.carousel.min.css"
+      media="all"
+    />
+    <title>Defi Wonderland</title>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+
+  <script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+  ></script>
+  <script src="./assets/js/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"
+  ></script>
+  <script src="./assets/js/all.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        if (scroll > 60) {
+          $(".top-nav").css("background", "#fff");
+        } else {
+          $(".top-nav").css("background", "transparent");
+        }
+      });
+      // Add minus icon for collapse element which is open by default
+      $(".collapse.show").each(function () {
+        $(this)
+          .prev(".card-header")
+          .find(".fa")
+          .addClass("fa-sort-up")
+          .removeClass("fa-sort-down");
+        $(this)
+          .prev(".card-header")
+          .find(".svg-inline--fa")
+          .addClass("fa-sort-up")
+          .removeClass("fa-sort-down");
+      });
+
+      // Toggle plus minus icon on show hide of collapse element
+      $(".collapse")
+        .on("show.bs.collapse", function () {
+          $(this)
+            .prev(".card-header")
+            .find(".fa")
+            .removeClass("fa-sort-down")
+            .addClass("fa-sort-up");
+
+          $(this)
+            .prev(".card-header")
+            .find(".svg-inline--fa")
+            .removeClass("fa-sort-down")
+            .addClass("fa-sort-up");
+        })
+        .on("hide.bs.collapse", function () {
+          $(this)
+            .prev(".card-header")
+            .find(".fa")
+            .removeClass("fa-sort-up")
+            .addClass("fa-sort-down");
+
+          $(this)
+            .prev(".card-header")
+            .find(".svg-inline--fa")
+            .removeClass("fa-sort-up")
+            .addClass("fa-sort-down");
+        });
+
+      $(".navbar-collapse.collapse")
+        .on("show.bs.collapse", function () {
+          $("#mobile-nav-icon")
+            .find(".svg-inline--fa")
+            .removeClass("fa-grip-lines")
+            .addClass("fa-times");
+        })
+        .on("hide.bs.collapse", function () {
+          $("#mobile-nav-icon")
+            .find(".svg-inline--fa")
+            .removeClass("fa-times")
+            .addClass("fa-grip-lines");
+        });
+    });
+  </script>
+</html>
